@@ -53,7 +53,7 @@ struct jsonObj *jsonObjNumberLongLong(long long number) {
 
 struct jsonObj *jsonObjNumber(double number) {
     /* If we can represent this double as an integer, do that instead. */
-    if (isfinite(number) && (long long)number == number) {
+    if (!isinf(number) && (long long)number == number) {
         return jsonObjNumberAsStringTake(sdsfromlonglong(number));
     } else {
         /* else, create a normal double number object. */

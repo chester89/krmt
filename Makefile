@@ -35,7 +35,7 @@ endif
 
 # For debugging, you may want to back this down to -O0 and remove -DPRODUCTION to
 # generate verbose logging in some modules.
-CFLAGS:=-O2 -DPRODUCTION -g -Wall -pedantic -std=c99 -Wno-unused-function -Wno-format $(CFLAGS)
+CFLAGS:=-O2 -DPRODUCTION -g -Wall -pedantic -std=gnu99 -Wno-unused-function -Wno-format $(CFLAGS)
 
 # Flags for .so compiling; OS X be crazy
 ifeq ($(shell uname -s),Darwin)
